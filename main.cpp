@@ -16,6 +16,7 @@ int main()
 	bool lastWasDigit = false;
 	while( c = getchar())
 	{
+		//
 		if(c==EOF)
 		{
 			break;
