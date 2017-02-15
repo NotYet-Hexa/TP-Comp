@@ -17,6 +17,7 @@ using namespace std;
 
 //------------------------------------------------------ Include personnel
 #include "Expression.h"
+#include "constante.h"
 
 //---------------------------------------------------- Variables de classe
 
