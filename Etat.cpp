@@ -28,9 +28,19 @@ using namespace std;
 
 //----------------------------------------------------- Méthodes publiques
 
+
+//----- Nouvelle méthode
+void Etat::print() const
+{
+    cout<<name<<"\n";
+} 
+//-----Fin méthode
+
 //----- Constructeur
-Etat::Etat()
-{}// Bloc vide
+Etat::Etat(string name)
+{
+    this->name = name;
+}
 //----- Fin constructeur
 
 //----- Destructeur
