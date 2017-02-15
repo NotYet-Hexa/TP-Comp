@@ -8,11 +8,12 @@ Etat.h  -  description
 
 //---------- Interface de la classe Etat (fichier Etat.h) ------
 #if ! defined ( ETAT_H )
-#define Etat_H
+#define ETAT_H
 
 
 
 //--------------------------------------------------- Interfaces utilisées
+#include "Symbole.h"
 
 //------------------------------------------------------------------------
 
@@ -24,9 +25,21 @@ Etat.h  -  description
 
 //------------------------------------------------------------------------
 
-class Etat{
+class Etat {
 
-    
-}
+    protected: 
+        
+        string name;
 
+    public:
+
+        Etat(std::string name);
+        
+        virtual ~Etat();
+
+        void print() const;
+
+        virtual bool transition(Automate & automate, Symbole * s) = 0;
+
+};
 #endif // if ! defined ETAT_H
