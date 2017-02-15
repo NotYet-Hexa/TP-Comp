@@ -1,2 +1,0 @@
-# TPcompQuentinJacques
-TP de compilation
