@@ -24,7 +24,11 @@ copyright            : (C)2015 par FOLLEAS Jacques et SCHROTER Quentin
 //------------------------------------------------------------------------
 
 class E1{
+    public:
+        E1();
 
-}
+    private:
+        ~E1();
+};
 
 #endif // if ! defined E1_H

@@ -47,7 +47,5 @@ int main()
 			str= (char)c;
 			cout <<  str << endl;
 		}
-
 	}
-
 }

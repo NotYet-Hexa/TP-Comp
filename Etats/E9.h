@@ -24,8 +24,12 @@ copyright            : (C)2015 par FOLLEAS Jacques et SCHROTER Quentin
 //------------------------------------------------------------------------
 
 class E9{
+    public:
+        E9();
 
+    private:
+        ~E9();
 
-}
+};
 
 #endif // if ! defined E9_H

@@ -24,8 +24,12 @@ copyright            : (C)2015 par FOLLEAS Jacques et SCHROTER Quentin
 //------------------------------------------------------------------------
 
 class E7{
+    public:
+        E7();
 
+    private:
+        ~E7();
 
-}
+};
 
 #endif // if ! defined E7_H

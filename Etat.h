@@ -10,10 +10,12 @@ Etat.h  -  description
 #if ! defined ( ETAT_H )
 #define ETAT_H
 
-
+#include <string>
 
 //--------------------------------------------------- Interfaces utilisées
 #include "Symbole.h"
+#include "Automate.h"
+
 
 //------------------------------------------------------------------------
 
@@ -29,7 +31,7 @@ class Etat {
 
     protected: 
         
-        string name;
+        std::string name;
 
     public:
 

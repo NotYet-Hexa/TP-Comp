@@ -1,14 +1,14 @@
 /*************************************************************************
 TPComp
-E3.h  -  Header de E3
+Automate.h  -  Interface de Automate
 -------------------
 début                : 15/02/2017
 copyright            : (C)2015 par FOLLEAS Jacques et SCHROTER Quentin
 *************************************************************************/
 
-//---------- Interface de la classe E3 (fichier E3.h) ------
-#if ! defined ( E3_H )
-#define E3_H
+//---------- Interface de la classe Automate (fichier Automate.h) ------
+#if ! defined ( AUTOMATE_H )
+#define AUTOMATE_H
 
 
 //--------------------------------------------------- Interfaces utilisées
@@ -18,18 +18,17 @@ copyright            : (C)2015 par FOLLEAS Jacques et SCHROTER Quentin
 //------------------------------------------------------------- Constantes
 
 //------------------------------------------------------------------------
-// Role de la classe E3:
+// Role de la classe Automate:
 //
 
 //------------------------------------------------------------------------
 
-class E3{
+class Automate{
     public:
-        E3();
+        Automate();
 
     private:
-        ~E3();
-
+        ~Automate();
 };
 
-#endif // if ! defined E3_H
+#endif // if ! defined AUTOMATE_H

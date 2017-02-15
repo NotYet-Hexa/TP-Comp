@@ -24,8 +24,12 @@ copyright            : (C)2015 par FOLLEAS Jacques et SCHROTER Quentin
 //------------------------------------------------------------------------
 
 class E6{
+    public:
+        E6();
 
+    private:
+        ~E6();
 
-}
+};
 
 #endif // if ! defined E6_H

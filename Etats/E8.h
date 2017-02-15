@@ -24,8 +24,12 @@ copyright            : (C)2015 par FOLLEAS Jacques et SCHROTER Quentin
 //------------------------------------------------------------------------
 
 class E8{
+    public:
+        E8();
 
+    private:
+        ~E8();
 
-}
+};
 
 #endif // if ! defined E8_H

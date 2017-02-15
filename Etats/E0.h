@@ -24,8 +24,12 @@ copyright            : (C)2015 par FOLLEAS Jacques et SCHROTER Quentin
 //------------------------------------------------------------------------
 
 class E0{
+    public:
+        E0();
 
+    private:
+        ~E0();
 
-}
+};
 
 #endif // if ! defined E0_H

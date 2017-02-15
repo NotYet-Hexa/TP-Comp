@@ -24,8 +24,12 @@ copyright            : (C)2015 par FOLLEAS Jacques et SCHROTER Quentin
 //------------------------------------------------------------------------
 
 class E4{
+    public:
+        E4();
 
+    private:
+        ~E4();
 
-}
+};
 
 #endif // if ! defined E4_H
