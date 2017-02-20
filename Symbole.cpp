@@ -16,7 +16,7 @@ using namespace std;
 
 //------------------------------------------------------ Include personnel
 #include "Symbole.h"
-#include "constante.h"
+#include "Constante.h"
 
 //---------------------------------------------------- Variables de classe
 

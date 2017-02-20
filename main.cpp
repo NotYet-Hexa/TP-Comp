@@ -3,7 +3,7 @@
 #include <cctype>
 #include <stdio.h>
 #include <fstream>
-#include "constante.h"
+#include "Constante.h"
 #include "Symbole.h"
 //g+#include "Expression.h"
 
