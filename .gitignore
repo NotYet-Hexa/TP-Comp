@@ -1,3 +1,7 @@
 *.o
 exe
+<<<<<<< HEAD
 constante.h
+=======
+.vscode*
+>>>>>>> origin/master
