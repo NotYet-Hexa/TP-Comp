@@ -5,6 +5,7 @@ SRC = $(SRCroot) $(wildcard Etats/*.cpp) $(wildcard Etats/*.h)
 exe: $(SRC)
 	g++ $(SRC) -o exe
 
+	rm *.o
 clean:
 	rm exe
 

@@ -4,7 +4,7 @@
 #include <stdio.h>
 #include <fstream>
 #include "constante.h"
-//#include "Symbole.h"
+#include "Symbole.h"
 //g+#include "Expression.h"
 
 
