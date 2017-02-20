@@ -27,9 +27,11 @@ Etat.h  -  description
 
 //------------------------------------------------------------------------
 
+class Automate;
+
 class Etat {
 
-    protected: 
+    protected:
         
         std::string name;
 
@@ -41,7 +43,8 @@ class Etat {
 
         void print() const;
 
-        virtual bool transition(Automate & automate, Symbole * s) = 0;
+        virtual bool transition(Automate& automate, Symbole * s) = 0;
 
 };
+
 #endif // if ! defined ETAT_H

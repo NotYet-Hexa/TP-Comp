@@ -16,7 +16,7 @@ copyright            : (C)2015 par FOLLEAS Jacques et SCHROTER Quentin
 #include <stack>
 
 #include "Expression.h"
-// #include "Etat.h"
+#include "Etat.h"
 
 //------------------------------------------------------------------------
 
