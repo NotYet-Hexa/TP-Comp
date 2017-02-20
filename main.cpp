@@ -3,8 +3,13 @@
 #include <cctype>
 #include <stdio.h>
 #include <fstream>
+#include <list>
+
 #include "Constante.h"
 #include "Symbole.h"
+#include "Expression.h"
+#include "Lexer.h"
+
 //g+#include "Expression.h"
 
 
@@ -15,7 +20,10 @@ int main()
 {
 	string str;
 	int c;
-	std::ifstream is;
+
+	ifstream is;
+	list<Symbole *> symboles;
+
 	bool lastWasDigit = false;
 	while( c = getchar())
 	{
@@ -35,28 +43,51 @@ int main()
 				if( c >= INT_ZERO && c <= INT_NEUF)
 				{	
 					getchar();
-					str+= (char)c;
+					str += (char)c;
 				}
 				else
 				{
 					break;
 				}
 			}
+			symboles.push_back(new Expression(stoi(str)));
+
 		}
 		else 	// Si ce n'est pas un nombre ça doit être un 
 				// des symbole suivante : ( ) + *
 		{	
+			int id;
 			switch(c)
 			{
-				case INT_FOIS   : str = '*';    break;
-				case INT_PLUS	: str = '+'; break;
-				case INT_POUV	: str = '('; break;
-				case INT_PFER	: str = ')'; break;
+				case INT_FOIS   : id = FOIS; break;
+				case INT_PLUS	: id = PLUS; break;
+				case INT_POUV	: id = POUV; break;
+				case INT_PFER	: id = PFER; break;
 				default    		: cout <<"caractère non recunu"<< c <<endl; return 0; 
 			}
-		}
+			symboles.push_back(new Symbole(id));
+		}		
 	}
-		cout<<str<<endl;
+
+#if DEBUG
+
+	for(list<Symbole *>::iterator it = symboles.begin(); it != symboles.end(); it++)
+	{
+		(*it)->print();
+		cout << endl;
 	}
+
+#endif 
+
+
+	Lexer lexer(symboles);
+
+
+
+	for(list<Symbole *>::iterator it = symboles.begin(); it != symboles.end(); it++)
+	{
+		delete(*it);
+	}
+
 	return 0;
 }

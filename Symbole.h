@@ -30,9 +30,10 @@ class Symbole {
     protected: 
     
         int ident;
+
     public:
     
-        void print();
+        virtual void print();
 
         operator int() const; 
 

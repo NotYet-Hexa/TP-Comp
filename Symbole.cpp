@@ -17,6 +17,7 @@ using namespace std;
 //------------------------------------------------------ Include personnel
 #include "Symbole.h"
 #include "Constante.h"
+#include "Expression.h"
 
 //---------------------------------------------------- Variables de classe
 
@@ -33,12 +34,12 @@ void Symbole::print()
 {
      switch(this->ident)
     {
-        case EXPR  : cout << "EXPR\n";   break;
-        case PLUS  : cout << "PLUS\n";   break;
-        case FOIS  : cout << "FOIS\n";   break;
-        case POUV  : cout << "POUV\n";   break;
-        case PFER  : cout << "PFER\n";   break;
-        default    : cout << "NULL\n";
+        case EXPR  : cout << "problem"; break;
+        case PLUS  : cout << "PLUS";   break;
+        case FOIS  : cout << "FOIS";   break;
+        case POUV  : cout << "POUV";   break;
+        case PFER  : cout << "PFER";   break;
+        default    : cout << "NULL";
     }
 }
 //----- Fin méthode
@@ -51,9 +52,8 @@ Symbole::operator int () const
 //----- Fin méthode
 
 //----- Constructeur
-Symbole::Symbole(int id)
+Symbole::Symbole(int id) : ident(id)
 {
-    this->ident = id;
 }
 //------ Fin constructeur
 

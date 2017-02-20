@@ -13,6 +13,8 @@ copyright            : (C)2015 par FOLLEAS Jacques et SCHROTER Quentin
 
 //--------------------------------------------------- Interfaces utilisées
 
+#include <list>
+#include "Symbole.h"
 //------------------------------------------------------------------------
 
 //------------------------------------------------------------- Constantes
@@ -25,11 +27,15 @@ copyright            : (C)2015 par FOLLEAS Jacques et SCHROTER Quentin
 
 class Lexer{
     public:
-        Lexer();
-
-    private:
+        void Decalage();
+        Symbole* Lecture();
+        Lexer(std::list<Symbole *> symboles);
         ~Lexer();
 
+    private:
+        std::list<Symbole *> listeDeSymbole;
+        std::list<Symbole *>::iterator teteDeLecture;
+        
 };
 
 #endif // if ! defined LEXER_H

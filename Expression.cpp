@@ -29,11 +29,21 @@ using namespace std;
 
 //----------------------------------------------------- Méthodes publiques
 
+void Expression::print()
+{
+    cout << valeur;
+}
+
 //----- Constructeur
-Expression::Expression():Symbole(EXPR)
-{}// Bloc vide
+Expression::Expression(int val):Symbole(EXPR), valeur(val)
+{
+}// Bloc vide
 //----- Fin constructeur
 
+Expression::Expression(const Expression& exp):Symbole(EXPR), valeur(exp.valeur)
+{
+    cout << "copie" << endl;
+}
 //----- Destructeur
 Expression::~Expression()
 {}// Bloc vide

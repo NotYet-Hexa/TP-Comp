@@ -3,7 +3,7 @@ SRC = $(SRCroot) $(wildcard Etats/*.cpp) $(wildcard Etats/*.h)
 
 
 exe: $(SRC)
-	g++ $(SRC) -o exe
+	g++ $(SRC) -o exe -std=c++11 -D DEBUG
 
 clean:
 	rm exe

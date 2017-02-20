@@ -30,7 +30,8 @@ using namespace std;
 
 //----- Constructeur
 Automate::Automate()
-{}// Bloc vide
+{
+}// Bloc vide
 //----- Fin constructeur
 
 //----- Destructeur

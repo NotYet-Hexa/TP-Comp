@@ -13,6 +13,11 @@ copyright            : (C)2015 par FOLLEAS Jacques et SCHROTER Quentin
 
 //--------------------------------------------------- Interfaces utilisées
 
+#include <stack>
+
+#include "Expression.h"
+// #include "Etat.h"
+
 //------------------------------------------------------------------------
 
 //------------------------------------------------------------- Constantes
@@ -24,10 +29,19 @@ copyright            : (C)2015 par FOLLEAS Jacques et SCHROTER Quentin
 //------------------------------------------------------------------------
 
 class Automate{
+    
     public:
+        // void EmpilerExpression();
+        // Expression* DepilerExpression();
+
+        // void EmpilerEtat();
+        // Etat* DepilerEtat();
+
         Automate();
 
     private:
+        // std::stack<Expression*> pileExpression;
+        // std::stack<Etat*> pileEtat;
         ~Automate();
 };
 

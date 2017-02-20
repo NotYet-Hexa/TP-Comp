@@ -27,10 +27,25 @@ using namespace std;
 //-------------------------------------------------------- Fonctions amies
 
 //----------------------------------------------------- Méthodes publiques
+void Lexer::Decalage()
+{
+    if(this->teteDeLecture != this->listeDeSymbole.end())
+    {
+        this->teteDeLecture++;
+    }
+}
+
+Symbole* Lexer::Lecture()
+{
+    return *(this->teteDeLecture);
+}
+
 
 //----- Constructeur
-Lexer::Lexer()
-{}// Bloc vide
+Lexer::Lexer(list<Symbole *> symboles) : listeDeSymbole(symboles)
+{
+    this->teteDeLecture = listeDeSymbole.begin();
+}
 //----- Fin constructeur
 
 //----- Destructeur
