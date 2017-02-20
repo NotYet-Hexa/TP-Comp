@@ -16,7 +16,14 @@ copyright            : (C)2015 par FOLLEAS Jacques et SCHROTER Quentin
 using namespace std;
 
 //------------------------------------------------------ Include personnel
+#include "../Constante.h"
+#include "../Expression.h"
+
+
 #include "E0.h"
+#include "E1.h"
+// #include "E2.h"
+#include "E3.h"
 
 //---------------------------------------------------- Variables de classe
 
@@ -28,8 +35,36 @@ using namespace std;
 
 //----------------------------------------------------- Méthodes publiques
 
+bool E0::Transition(Automate* const automate, Symbole * s)
+{
+    switch((int)(*s))
+    {
+        case EXPR : 
+            {
+                Expression * ex = (Expression*)(s);
+                if(ex->evalue)
+                {
+                    automate->Decalage(s, new E1());
+                }
+                else
+                {
+                    automate->Decalage(s, new E3());
+                }
+            }
+            break;
+        case POUV : 
+            // cout << "POUV";
+            // automate->Decalage(s, new E2());
+            break;
+        default : 
+            cout << name << endl;
+            cout << (int)(*s);
+            exit(0);
+    }
+}
+
 //----- Constructeur
-E0::E0()
+E0::E0() : Etat("E0")
 {}// Bloc vide
 //----- Fin constructeur
 

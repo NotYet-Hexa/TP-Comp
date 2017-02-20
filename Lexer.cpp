@@ -40,6 +40,12 @@ Symbole* Lexer::Lecture()
     return *(this->teteDeLecture);
 }
 
+void Lexer::Insert(Symbole* s)
+{
+    // delete *teteDeLecture;
+    *teteDeLecture = s;
+}
+
 
 //----- Constructeur
 Lexer::Lexer(list<Symbole *> symboles) : listeDeSymbole(symboles)

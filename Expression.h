@@ -26,13 +26,15 @@ class Expression : public Symbole {
     private: 
 
         int valeur;
+        
 
     public:
 
         int GetValeur();
-        virtual void print() ;
+        virtual void print();
+        bool evalue;
 
-        Expression(int val);
+        Expression(int val, bool eval = false);
         Expression(const Expression& exp);
         ~Expression();
 };

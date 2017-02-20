@@ -65,6 +65,7 @@ int Automate::Run()
         Symbole* symboleSuivant = lexer->Lecture();
         courant->Transition(this, symboleSuivant);
     }
+    return ((Expression *)(pileSymbole.top()))->GetValeur();
 }
 
 void Automate::Accepter()
@@ -76,10 +77,12 @@ void Automate::Decalage(Symbole* s, Etat* e)
 {
     pileSymbole.push(s);
     pileEtat.push(e);
+    lexer->Decalage();
 }
 
-void Automate::Reduction(int n, Symbole* s)
+void Automate::Reduction(int n)
 {
+    Expression* ex;
     for(int i = 0; i < n; i++)
     {
         delete(pileEtat.top());
@@ -87,11 +90,11 @@ void Automate::Reduction(int n, Symbole* s)
     }
     if(n==1)
     {
-        //rien a faire
+        ex = (Expression*)DepilerSymbole();
+        ex->evalue = true;
     }
     else if(n==3)
     {
-        Expression* ex;
         Symbole* tmp = DepilerSymbole();
         if((int)*tmp == EXPR)
         {
@@ -108,20 +111,24 @@ void Automate::Reduction(int n, Symbole* s)
                     resultTmp = ((Expression*)tmp)->GetValeur() * tmp2->GetValeur();
                     break;
             }
-            ex = new Expression(resultTmp);
+            ex = new Expression(resultTmp, true);
         }
         else
         { //doit etre une paranthese
             ex = (Expression*)DepilerSymbole();
+            ex->evalue = true;
             DepilerSymbole();
         }
-        EmpilerSymbole(ex);
     }
     else
     {
         cout << "problem" << endl;
     }
-    // lexer-> pas compris
+    // on met dans le pointeur du lexer l'expression qu'on vient de calculer
+    // de telle sorte que le prochain symbole lu sera l'expression que l'on vient de calculer
+    cout << ex->GetValeur() << endl;
+    lexer->Insert((Symbole*)ex);
+    cout << ex->GetValeur() << endl;
 }
 
 //----- Constructeur

@@ -41,11 +41,12 @@ class Automate{
 
         void Accepter();
         void Decalage(Symbole* s, Etat* e);
-        void Reduction(int n, Symbole* s);
+        void Reduction(int n);
 
         int Run();
 
         Automate(Lexer& l);
+        ~Automate();
 
     private:
         Lexer* lexer;
@@ -54,7 +55,7 @@ class Automate{
 
         bool accepter;
 
-        ~Automate();
+        
 };
 
 #endif // if ! defined AUTOMATE_H

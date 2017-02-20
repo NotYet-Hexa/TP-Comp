@@ -40,12 +40,12 @@ int Expression::GetValeur()
 }
 
 //----- Constructeur
-Expression::Expression(int val):Symbole(EXPR), valeur(val)
+Expression::Expression(int val, bool eval):Symbole(EXPR), valeur(val), evalue(eval)
 {
 }// Bloc vide
 //----- Fin constructeur
 
-Expression::Expression(const Expression& exp):Symbole(EXPR), valeur(exp.valeur)
+Expression::Expression(const Expression& exp):Symbole(EXPR), valeur(exp.valeur), evalue(exp.evalue)
 {
     cout << "copie" << endl;
 }

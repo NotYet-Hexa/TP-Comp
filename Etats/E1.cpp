@@ -17,6 +17,7 @@ using namespace std;
 
 //------------------------------------------------------ Include personnel
 #include "E1.h"
+#include "../Constante.h"
 
 //---------------------------------------------------- Variables de classe
 
@@ -27,9 +28,28 @@ using namespace std;
 //-------------------------------------------------------- Fonctions amies
 
 //----------------------------------------------------- Méthodes publiques
+bool E1::Transition(Automate* const automate, Symbole * s)
+{
+    switch((int)(*s))
+    {
+        case PLUS : 
+            // automate->Decalage(s, new E4());
+            break;
+        case FOIS : 
+            // automate->Decalage(s, new E5());
+            break;
+        case DOLL :
+            automate->Accepter();
+            break;
+        default : 
+            cout << name << endl;
+            cout << (int)(*s);
+            exit(0);
+    }
+}
 
 //----- Constructeur
-E1::E1()
+E1::E1() : Etat("E1")
 {}// Bloc vide
 //----- Fin constructeur
 

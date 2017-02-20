@@ -9,6 +9,7 @@
 #include "Symbole.h"
 #include "Expression.h"
 #include "Lexer.h"
+#include "Automate.h"
 
 //g+#include "Expression.h"
 
@@ -31,6 +32,7 @@ int main()
 		if(c==EOF || c == (int)('\n') || c == (int)('\r'))
 		{
 			// l'Expression n'est formé que de caractère reconue 
+			symboles.push_back(new Symbole(DOLL));
 			break;
 		}
 
@@ -82,6 +84,8 @@ int main()
 
 	Lexer lexer(symboles);
 
+	Automate aut(lexer);
+	cout << aut.Run() << endl;
 
 
 	for(list<Symbole *>::iterator it = symboles.begin(); it != symboles.end(); it++)

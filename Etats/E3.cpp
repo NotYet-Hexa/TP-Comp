@@ -27,9 +27,24 @@ using namespace std;
 //-------------------------------------------------------- Fonctions amies
 
 //----------------------------------------------------- Méthodes publiques
+bool E3::Transition(Automate* const automate, Symbole * s)
+{
+    automate->Reduction(1);
+    // switch((int)(*s))
+    // {
+    //     case PLUS : 
+    //     case FOIS : 
+    //     case POUV :
+    //     case DOLL :
+    //         automate->Accepter();
+    //         break;
+    //     default : 
+    //         cout << "problem";
+    // }
+}
 
 //----- Constructeur
-E3::E3()
+E3::E3() : Etat("E3")
 {}// Bloc vide
 //----- Fin constructeur
 

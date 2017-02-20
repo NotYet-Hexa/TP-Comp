@@ -9,6 +9,7 @@ const int PLUS = 2;
 const int FOIS = 3;
 const int POUV = 4;
 const int PFER = 5;
+const int DOLL = 6;
 
 
 // code ASCII des caractère:

@@ -28,6 +28,7 @@ copyright            : (C)2015 par FOLLEAS Jacques et SCHROTER Quentin
 class Lexer{
     public:
         void Decalage();
+        void Insert(Symbole* s);
         Symbole* Lecture();
         Lexer(std::list<Symbole *> symboles);
         ~Lexer();
