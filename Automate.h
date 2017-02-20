@@ -15,8 +15,9 @@ copyright            : (C)2015 par FOLLEAS Jacques et SCHROTER Quentin
 
 #include <stack>
 
-#include "Expression.h"
+#include "Symbole.h"
 #include "Etat.h"
+#include "Lexer.h"
 
 //------------------------------------------------------------------------
 
@@ -27,21 +28,32 @@ copyright            : (C)2015 par FOLLEAS Jacques et SCHROTER Quentin
 //
 
 //------------------------------------------------------------------------
+class Etat;
 
 class Automate{
     
     public:
-        // void EmpilerExpression();
-        // Expression* DepilerExpression();
+        void EmpilerSymbole(Symbole* s);
+        Symbole* DepilerSymbole();
 
-        // void EmpilerEtat();
-        // Etat* DepilerEtat();
+        void EmpilerEtat(Etat* e);
+        Etat* DepilerEtat();
 
-        Automate();
+        void Accepter();
+        void Decalage(Symbole* s, Etat* e);
+        void Reduction(int n, Symbole* s);
+
+        int Run();
+
+        Automate(Lexer& l);
 
     private:
-        // std::stack<Expression*> pileExpression;
-        // std::stack<Etat*> pileEtat;
+        Lexer* lexer;
+        std::stack<Symbole*> pileSymbole;
+        std::stack<Etat*> pileEtat;
+
+        bool accepter;
+
         ~Automate();
 };
 

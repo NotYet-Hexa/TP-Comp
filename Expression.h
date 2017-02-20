@@ -29,11 +29,12 @@ class Expression : public Symbole {
 
     public:
 
+        int GetValeur();
         virtual void print() ;
 
-    Expression(int val);
-    Expression(const Expression& exp);
-    ~Expression();
+        Expression(int val);
+        Expression(const Expression& exp);
+        ~Expression();
 };
 //------------------------------------------------------------------------
 

@@ -34,6 +34,11 @@ void Expression::print()
     cout << valeur;
 }
 
+int Expression::GetValeur()
+{
+    return this->valeur;
+}
+
 //----- Constructeur
 Expression::Expression(int val):Symbole(EXPR), valeur(val)
 {
