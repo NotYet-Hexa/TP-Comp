@@ -58,35 +58,41 @@ int main()
 			int id;
 			switch(c)
 			{
-				case INT_FOIS   : id = FOIS; break;
-				case INT_PLUS	: id = PLUS; break;
-				case INT_POUV	: id = POUV; break;
-				case INT_PFER	: id = PFER; break;
-				default    		: cout <<"caractère non recunu"<< c <<endl; return 0; 
+				case INT_FOIS : id = FOIS; break;
+				case INT_PLUS : id = PLUS; break;
+				case INT_POUV : id = POUV; break;
+				case INT_PFER : id = PFER; break;
+				default : 
+					cout << "caractère non recunu" << c <<endl;
+					return 0; 
 			}
 			symboles.push_back(new Symbole(id));
 		}		
 	}
 
-// // #if DEBUG
 
+#if DEBUG
+	cout << "------DEBUG-Contenue-du-lexer------" << endl;
+	for(list<Symbole *>::iterator it = symboles.begin(); it != symboles.end(); it++)
+	{
+		(*it)->print();
+		cout << endl;
+	}
+	cout << "-----------------------------------" << endl;
+#endif 
 
-// 	for(list<Symbole *>::iterator it = symboles.begin(); it != symboles.end(); it++)
-// 	{
-// 		(*it)->print();
-// 		cout << endl;
-// 	}
-// 	cout<<"fin de lecture création du lexer"<<endl;
-// #endif 
-
-
+	// On initialise le lexer avec nos symboles
 	Lexer lexer(symboles);
 
+	// On initialise l'automate avec le lexer
 	Automate aut(lexer);
-	int resultat = aut.Run();
-	cout <<"resultat: "<< resultat<< endl;
 
-	symboles.clear();
+	// On lance le lexer et on récupère l'expression évalué
+	int resultat = aut.Run();
+
+	cout << "Resultat : "<< resultat << endl;
+
+	// symboles.clear();
 
 	return 0;
 }
