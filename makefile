@@ -8,14 +8,14 @@ SRCCPP_ETAT = $(wildcard Etats/*.cpp)
 SRCH = Automate.h Etat.h Expression.h Lexer.h Constante.h Symbole.h
 SRCH_ETAT = $(wildcard Etats/*.h)
 SRC = $(SRCH) $(SRCH_ETAT) $(SRCCPP) $(SRCCPP_ETAT)
-OBJ = $(SRCCPP_ETAT:Etats/%.cpp=%.o) $(SRCCPP:.cpp=.o)
+OBJ = $(SRCCPP:.cpp=.o) $(SRCCPP_ETAT:Etats/%.cpp=%.o) 
 # OBJ= $(SRCCPP:.cpp=.o)
 
 
 all: $(EXEC)
 
-$(EXEC): $(OBJ)
-	$(CC) $^ -o $@ $(LDFLAGS)
+$(EXEC): $(OBJ) $(SRC)
+	$(CC) $(OBJ) -o $@ $(LDFLAGS)
 
 # file in current folder
 %.o: %.cpp %.h
