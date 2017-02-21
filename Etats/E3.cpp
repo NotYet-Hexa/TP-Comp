@@ -16,9 +16,10 @@ copyright            : (C)2015 par FOLLEAS Jacques et SCHROTER Quentin
 using namespace std;
 
 //------------------------------------------------------ Include personnel
-#include "E3.h"
-#include "../Expression.h"
 #include "../Constante.h"
+#include "../Expression.h"
+
+#include "E3.h"
 
 //---------------------------------------------------- Variables de classe
 
@@ -38,19 +39,14 @@ void E3::Transition(Automate* const automate, Symbole * s)
     switch((int)(*s))
     {
         case PLUS :
-            automate->Reduction(1);
-            break;
         case FOIS :
-            automate->Reduction(1);
-            break; 
         case PFER :
-            automate->Reduction(1);
-            break;
         case DOLL :
             automate->Reduction(1);
             break;
         default : 
-            cout << "problem";
+            cout << PROBLEME << endl;
+            exit(0);
     }
 }
 

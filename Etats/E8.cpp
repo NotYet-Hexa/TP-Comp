@@ -16,6 +16,9 @@ copyright            : (C)2015 par FOLLEAS Jacques et SCHROTER Quentin
 using namespace std;
 
 //------------------------------------------------------ Include personnel
+#include "../Constante.h"
+#include "../Expression.h"
+
 #include "E8.h"
 
 //---------------------------------------------------- Variables de classe
@@ -27,9 +30,26 @@ using namespace std;
 //-------------------------------------------------------- Fonctions amies
 
 //----------------------------------------------------- Méthodes publiques
-
+void E8::Transition(Automate* const automate, Symbole * s)
+{
+    this->print();
+    s->print();
+    cout<<endl;
+    switch((int)(*s))
+    {
+        case PLUS :
+        case FOIS :
+        case PFER : 
+        case DOLL :
+            automate->Reduction(3);    
+            break;
+        default : 
+            cout << PROBLEME << endl;
+            exit(0);
+    }
+}
 //----- Constructeur
-E8::E8()
+E8::E8() : Etat("E8")
 {}// Bloc vide
 //----- Fin constructeur
 

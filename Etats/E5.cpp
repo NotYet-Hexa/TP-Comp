@@ -16,7 +16,13 @@ copyright            : (C)2015 par FOLLEAS Jacques et SCHROTER Quentin
 using namespace std;
 
 //------------------------------------------------------ Include personnel
+#include "../Constante.h"
+#include "../Expression.h"
+
+#include "E2.h"
+#include "E3.h"
 #include "E5.h"
+#include "E8.h"
 
 //---------------------------------------------------- Variables de classe
 
@@ -27,9 +33,37 @@ using namespace std;
 //-------------------------------------------------------- Fonctions amies
 
 //----------------------------------------------------- Méthodes publiques
+void E5::Transition(Automate* const automate, Symbole * s)
+{
+    this->print();
+    s->print();
+    cout<<endl;
+    switch((int)(*s))
+    {
+        case EXPR : 
+            {
+                Expression * ex = (Expression*)(s);
+                if(ex->evalue)
+                {
+                    automate->Decalage(s, new E8());
+                }
+                else
+                {
+                    automate->Decalage(s, new E3());
+                }
+            }
+            break;
+        case POUV : 
+            automate->Decalage(s, new E2());
+            break;
+        default : 
+            cout << PROBLEME << endl;
+            exit(0);
+    }
+}
 
 //----- Constructeur
-E5::E5()
+E5::E5() : Etat("E5")
 {}// Bloc vide
 //----- Fin constructeur
 

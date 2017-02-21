@@ -22,7 +22,7 @@ using namespace std;
 
 #include "E0.h"
 #include "E1.h"
-// #include "E2.h"
+#include "E2.h"
 #include "E3.h"
 
 //---------------------------------------------------- Variables de classe
@@ -56,12 +56,10 @@ void E0::Transition(Automate* const automate, Symbole * s)
             }
             break;
         case POUV : 
-            // cout << "POUV";
-            // automate->Decalage(s, new E2());
+            automate->Decalage(s, new E2());
             break;
         default : 
-            cout << "problème" << endl;
-            // cout << (int)(*s);
+            cout << PROBLEME << endl;
             exit(0);
     }
 }

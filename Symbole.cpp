@@ -34,7 +34,7 @@ void Symbole::print()
 {
      switch(this->ident)
     {
-        case EXPR  : cout << "problem"; break;
+        case EXPR  : cout << PROBLEME << endl;
         case PLUS  : cout << "PLUS";   break;
         case FOIS  : cout << "FOIS";   break;
         case POUV  : cout << "POUV";   break;
