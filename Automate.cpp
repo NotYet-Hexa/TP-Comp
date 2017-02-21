@@ -149,6 +149,11 @@ Automate::Automate(Lexer& l): accepter(false)// pileSymbole(), pileEtat()
 //----- Destructeur
 Automate::~Automate()
 {
-    // delete E0 et E1 dans la pileEtat
+    while(!pileEtat.empty())
+    {
+        Etat* top = pileEtat.top();
+        pileEtat.pop();
+        delete top;
+    }
 }// Bloc vide
 //----- Fin destructeur

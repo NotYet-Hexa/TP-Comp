@@ -45,13 +45,10 @@ Symbole* Lexer::Lecture()
 
 void Lexer::Insert(Symbole* s)
 {
-    // delete *teteDeLecture;
     teteDeLecture--;
-    // Symbole * tmp
+    Symbole* tmp = *teteDeLecture;
     *teteDeLecture = s;
-    // cout<<"En tete de lecture après insert : ";
-    // (*(this->teteDeLecture))->print();
-    // cout<<endl;
+    delete tmp;
 }
 
 
@@ -71,5 +68,7 @@ Lexer::Lexer(list<Symbole *> symboles) : listeDeSymbole(symboles)
 
 //----- Destructeur
 Lexer::~Lexer()
-{}// Bloc vide
+{
+    
+}// Bloc vide
 //----- Fin destructeur
