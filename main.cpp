@@ -89,6 +89,8 @@ int main()
 	Automate aut(lexer);
 	int resultat = aut.Run();
 	cout <<"resultat: "<< resultat<< endl;
-	
+
+	symboles.clear();
+
 	return 0;
 }

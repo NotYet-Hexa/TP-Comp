@@ -73,5 +73,6 @@ Lexer::~Lexer()
     {
         delete *it;
     }
+    listeDeSymbole.clear();
 }// Bloc vide
 //----- Fin destructeur

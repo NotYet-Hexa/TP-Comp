@@ -155,5 +155,10 @@ Automate::~Automate()
         pileEtat.pop();
         delete top;
     }
+    
+    while (!pileSymbole.empty() )
+    {
+        pileSymbole.pop();
+    }
 }// Bloc vide
 //----- Fin destructeur
