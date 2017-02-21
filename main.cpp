@@ -87,7 +87,8 @@ int main()
 	Lexer lexer(symboles);
 
 	Automate aut(lexer);
-	cout << aut.Run() << endl;
+	int resultat = aut.Run();
+	cout <<"resultat: "<< resultat<< endl;
 
 
 	for(list<Symbole *>::iterator it = symboles.begin(); it != symboles.end(); it++)

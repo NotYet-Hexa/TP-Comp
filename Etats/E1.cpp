@@ -17,6 +17,7 @@ using namespace std;
 
 //------------------------------------------------------ Include personnel
 #include "E1.h"
+#include "E4.h"
 #include "../Constante.h"
 #include "../Expression.h"
 
@@ -37,7 +38,7 @@ bool E1::Transition(Automate* const automate, Symbole * s)
     switch((int)(*s))
     {
         case PLUS : 
-            // automate->Decalage(s, new E4());
+            automate->Decalage(s, new E4());
             break;
         case FOIS : 
             // automate->Decalage(s, new E5());

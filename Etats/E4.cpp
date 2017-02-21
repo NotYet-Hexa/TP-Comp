@@ -17,6 +17,9 @@ using namespace std;
 
 //------------------------------------------------------ Include personnel
 #include "E4.h"
+#include "E3.h"
+#include "../Constante.h"
+#include "../Expression.h"
 
 //---------------------------------------------------- Variables de classe
 
@@ -28,8 +31,39 @@ using namespace std;
 
 //----------------------------------------------------- Méthodes publiques
 
+bool E4::Transition(Automate* const automate, Symbole * s)
+{
+    this->print();
+    s->print();
+    cout<<endl;
+    switch((int)(*s))
+    {
+        case EXPR : 
+            {
+                Expression * ex = (Expression*)(s);
+                if(ex->evalue)
+                {
+                    //automate->Decalage(s, new E7());
+                }
+                else
+                {
+                    automate->Decalage(s, new E3());
+                }
+            }
+            break;
+        case POUV : 
+            // automate->Decalage(s, new E2());
+            break;
+        default : 
+            cout << "problème" << endl;
+            // cout << (int)(*s);
+            exit(0);
+    }
+}
+
+
 //----- Constructeur
-E4::E4()
+E4::E4() : Etat("E4")
 {}// Bloc vide
 //----- Fin constructeur
 
