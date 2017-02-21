@@ -147,5 +147,7 @@ Automate::Automate(Lexer& l): accepter(false)// pileSymbole(), pileEtat()
 
 //----- Destructeur
 Automate::~Automate()
-{}// Bloc vide
+{
+    
+}// Bloc vide
 //----- Fin destructeur
