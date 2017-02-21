@@ -63,7 +63,12 @@ int Automate::Run()
     {
         Etat* courant = pileEtat.top();
         Symbole* symboleSuivant = lexer->Lecture();
-        cout<<"Symbole lu :"<<((Expression)(*symboleSuivant)).GetValeur()<<" : "<<((Expression)(*symboleSuivant)).evalue<<endl;
+        // cout<<"Symbole lu :";
+        // symboleSuivant->print();
+        // cout<<endl;
+        // cout<<"caster en expr:";
+        // ((Expression*)symboleSuivant)->print();
+        // cout<<endl;
         courant->Transition(this, symboleSuivant);
     }
     return ((Expression *)(pileSymbole.top()))->GetValeur();
@@ -127,9 +132,9 @@ void Automate::Reduction(int n)
     }
     // on met dans le pointeur du lexer l'expression qu'on vient de calculer
     // de telle sorte que le prochain symbole lu sera l'expression que l'on vient de calculer
-    cout << ex->GetValeur() << endl;
+    // cout << ex->GetValeur() << endl;
     lexer->Insert((Symbole*)ex);
-    cout << ex->GetValeur() << endl;
+    // cout << ex->GetValeur() << endl;
 }
 
 //----- Constructeur

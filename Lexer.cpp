@@ -37,6 +37,9 @@ void Lexer::Decalage()
 
 Symbole* Lexer::Lecture()
 {
+    // cout<<"lu dans lex : ";
+    // (*(this->teteDeLecture))->print();
+    // cout<<endl;
     return *(this->teteDeLecture);
 }
 
@@ -44,13 +47,23 @@ void Lexer::Insert(Symbole* s)
 {
     // delete *teteDeLecture;
     *teteDeLecture = s;
+    cout<<"En tete de lecture après insert : ";
+    (*(this->teteDeLecture))->print();
+    cout<<endl;
 }
 
 
 //----- Constructeur
 Lexer::Lexer(list<Symbole *> symboles) : listeDeSymbole(symboles)
 {
+    // cout<<"construction de Lexer"<<endl;
     this->teteDeLecture = listeDeSymbole.begin();
+    // for(list<Symbole *>::iterator it = listeDeSymbole.begin(); it != listeDeSymbole.end(); it++)
+	// {
+	// 	(*it)->print();
+	// 	cout << endl;
+	// }
+    // cout<<"Lexer construit" <<endl;
 }
 //----- Fin constructeur
 

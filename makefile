@@ -4,7 +4,7 @@ LDFLAGS=
 EXEC=exe
 
 SRCCPP = Automate.cpp Etat.cpp Expression.cpp Lexer.cpp main.cpp Symbole.cpp Etats/*.cpp
-SRCH = Automate.h Etat.h Expression.h Lexer.h Constante.h Symbole.H Etats/*.h
+SRCH = Automate.h Etat.h Expression.h Lexer.h Constante.h Symbole.h Etats/*.h
 SRC = $(SRCH) $(SRCCPP)
 OBJ= $(SRCCPP:.cpp=.o)
 

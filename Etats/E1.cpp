@@ -32,7 +32,8 @@ using namespace std;
 bool E1::Transition(Automate* const automate, Symbole * s)
 {
     this->print();
-    cout<<((Expression)(*s)).GetValeur()<<" : "<<((Expression)(*s)).evalue<<endl;
+    s->print();
+    cout<<endl;
     switch((int)(*s))
     {
         case PLUS : 

@@ -72,15 +72,15 @@ int main()
 		}		
 	}
 
-// #if DEBUG
+// // #if DEBUG
 
 
-	for(list<Symbole *>::iterator it = symboles.begin(); it != symboles.end(); it++)
-	{
-		(*it)->print();
-		cout << endl;
-	}
-	cout<<"fin de lecture création du lexer"<<endl;
+// 	for(list<Symbole *>::iterator it = symboles.begin(); it != symboles.end(); it++)
+// 	{
+// 		(*it)->print();
+// 		cout << endl;
+// 	}
+// 	cout<<"fin de lecture création du lexer"<<endl;
 // #endif 
 
 

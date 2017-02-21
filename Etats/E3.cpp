@@ -31,7 +31,8 @@ using namespace std;
 bool E3::Transition(Automate* const automate, Symbole * s)
 {
     this->print();
-    cout<<((Expression)(*s)).GetValeur()<<" : "<<((Expression)(*s)).evalue<<endl;
+    s->print();
+    cout<<endl;
     automate->Reduction(1);
     // switch((int)(*s))
     // {

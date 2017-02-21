@@ -33,6 +33,8 @@ void Expression::print()
 {
     cout<<"EXP :";
     cout << valeur;
+    cout<<" : ";
+    cout<<evalue;
 }
 
 int Expression::GetValeur()
