@@ -91,7 +91,7 @@ void Automate::Reduction(int n)
     Expression* ex;
     for(int i = 0; i < n; i++)
     {
-        delete(pileEtat.top());
+        delete pileEtat.top();
         pileEtat.pop();
     }
     if(n==1)
@@ -122,9 +122,11 @@ void Automate::Reduction(int n)
         }
         else
         { //doit etre une paranthese
-            ex = (Expression*)DepilerSymbole();
+            Expression* tmp = (Expression*)DepilerSymbole();
+            ex = new Expression(tmp->GetValeur()); 
             ex->evalue = true;
-            DepilerSymbole();
+            Symbole * pfer = DepilerSymbole();
+           
         }
     }
     else
