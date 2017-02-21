@@ -1,13 +1,24 @@
-SRCroot = $(wildcard *.cpp) $(wildcard *.h) 
-SRC = $(SRCroot) $(wildcard Etats/*.cpp) $(wildcard Etats/*.h)
+CC=g++
+CFLAGS=-W -Wall -ansi -pedantic
+LDFLAGS=
+EXEC=exe
 
+SRCCPP = Automate.cpp Etat.cpp Expression.cpp Lexer.cpp main.cpp Symbole.cpp Etats/*.cpp
+SRCH = Automate.h Etat.h Expression.h Lexer.h Constante.h Symbole.H Etats/*.h
+SRC = $(SRCH) $(SRCCPP)
+OBJ= $(SRCCPP:.cpp=.o)
 
-exe: $(SRC)
-	g++ $(SRC) -o exe -std=c++11 -D DEBUG
+all: $(EXEC)
+
+$(EXEC): $(OBJ)
+	$(CC) -o $@ $^ $(LDFLAGS)
+
+%.o: SRC
+	$(CC) -o $@ -c $< $(CFLAGS)
+
 
 clean:
-	rm exe
-	rm *.o
+	rm -rf *.o
 
-test: 
-	@echo $(SRC)
+mrproper: clean
+	rm -rf $(EXEC)

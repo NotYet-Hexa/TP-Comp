@@ -18,6 +18,7 @@ using namespace std;
 //------------------------------------------------------ Include personnel
 #include "E1.h"
 #include "../Constante.h"
+#include "../Expression.h"
 
 //---------------------------------------------------- Variables de classe
 
@@ -30,6 +31,8 @@ using namespace std;
 //----------------------------------------------------- Méthodes publiques
 bool E1::Transition(Automate* const automate, Symbole * s)
 {
+    this->print();
+    cout<<((Expression)(*s)).GetValeur()<<" : "<<((Expression)(*s)).evalue<<endl;
     switch((int)(*s))
     {
         case PLUS : 
@@ -42,8 +45,8 @@ bool E1::Transition(Automate* const automate, Symbole * s)
             automate->Accepter();
             break;
         default : 
-            cout << name << endl;
-            cout << (int)(*s);
+            cout << "problème" << endl;
+            // cout << (int)(*s);
             exit(0);
     }
 }

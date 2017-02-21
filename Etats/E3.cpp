@@ -17,6 +17,7 @@ using namespace std;
 
 //------------------------------------------------------ Include personnel
 #include "E3.h"
+#include "../Expression.h"
 
 //---------------------------------------------------- Variables de classe
 
@@ -29,6 +30,8 @@ using namespace std;
 //----------------------------------------------------- Méthodes publiques
 bool E3::Transition(Automate* const automate, Symbole * s)
 {
+    this->print();
+    cout<<((Expression)(*s)).GetValeur()<<" : "<<((Expression)(*s)).evalue<<endl;
     automate->Reduction(1);
     // switch((int)(*s))
     // {

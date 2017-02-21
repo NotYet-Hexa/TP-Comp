@@ -37,6 +37,8 @@ using namespace std;
 
 bool E0::Transition(Automate* const automate, Symbole * s)
 {
+    this->print();
+    cout<<((Expression)(*s)).GetValeur()<<" : "<<((Expression)(*s)).evalue<<endl;
     switch((int)(*s))
     {
         case EXPR : 
@@ -57,8 +59,8 @@ bool E0::Transition(Automate* const automate, Symbole * s)
             // automate->Decalage(s, new E2());
             break;
         default : 
-            cout << name << endl;
-            cout << (int)(*s);
+            cout << "problème" << endl;
+            // cout << (int)(*s);
             exit(0);
     }
 }
