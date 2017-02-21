@@ -69,6 +69,9 @@ Lexer::Lexer(list<Symbole *> symboles) : listeDeSymbole(symboles)
 //----- Destructeur
 Lexer::~Lexer()
 {
-    
+    for(list<Symbole *>::iterator it = listeDeSymbole.begin(); it != listeDeSymbole.end(); it++)
+    {
+        delete(*it);
+    }
 }// Bloc vide
 //----- Fin destructeur

@@ -90,11 +90,5 @@ int main()
 	int resultat = aut.Run();
 	cout <<"resultat: "<< resultat<< endl;
 
-
-	for(list<Symbole *>::iterator it = symboles.begin(); it != symboles.end(); it++)
-	{
-		delete(*it);
-	}
-
 	return 0;
 }
