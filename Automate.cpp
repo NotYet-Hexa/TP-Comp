@@ -97,7 +97,8 @@ void Automate::Reduction(int n)
     if(n==1)
     {
         Expression* tmp = (Expression*)DepilerSymbole();
-        ex = new Expression(tmp->GetValeur(), true);
+        ex = new Expression(tmp->GetValeur()); 
+        ex->evalue = true;
     }
     else if(n==3)
     {
