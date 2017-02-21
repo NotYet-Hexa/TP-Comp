@@ -1,6 +1,6 @@
 CC=g++
-CFLAGS=-std=c++11 -D DEBUG
-LDFLAGS=-std=c++11 -g -D DEBUG
+CFLAGS=-std=c++11 -g -O0 -D DEBUG
+LDFLAGS=-std=c++11 -g -O0 -D DEBUG
 EXEC=exe
 
 
