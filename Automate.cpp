@@ -126,7 +126,6 @@ void Automate::Reduction(int n)
             ex = new Expression(tmp->GetValeur()); 
             ex->evalue = true;
             Symbole * pfer = DepilerSymbole();
-            delete pfer;
         }
     }
     else

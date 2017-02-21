@@ -3,7 +3,6 @@ CFLAGS=-std=c++11 -g -O0 -D DEBUG
 LDFLAGS=-std=c++11 -g -O0 -D DEBUG
 EXEC=exe
 
-
 SRCCPP = Automate.cpp Etat.cpp Expression.cpp Lexer.cpp main.cpp Symbole.cpp 
 SRCCPP_ETAT = $(wildcard Etats/*.cpp)
 SRCH = Automate.h Etat.h Expression.h Lexer.h Constante.h Symbole.h
