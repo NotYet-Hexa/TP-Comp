@@ -92,7 +92,7 @@ int main()
 
 	cout << "Resultat : "<< resultat << endl;
 
-	// symboles.clear();
+	symboles.clear();
 
 	return 0;
 }
