@@ -91,7 +91,7 @@ void Automate::Reduction(int n)
     Expression* ex;
     for(int i = 0; i < n; i++)
     {
-        delete(pileEtat.top());
+        delete pileEtat.top();
         pileEtat.pop();
     }
     if(n==1)
