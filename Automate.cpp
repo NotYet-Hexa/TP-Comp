@@ -96,8 +96,8 @@ void Automate::Reduction(int n)
     }
     if(n==1)
     {
-        ex = (Expression*)DepilerSymbole();
-        ex->evalue = true;
+        Expression* tmp = (Expression*)DepilerSymbole();
+        ex = new Expression(tmp->GetValeur(), true);
     }
     else if(n==3)
     {
@@ -147,5 +147,12 @@ Automate::Automate(Lexer& l): accepter(false)// pileSymbole(), pileEtat()
 
 //----- Destructeur
 Automate::~Automate()
-{}// Bloc vide
+{
+    while(!pileEtat.empty())
+    {
+        Etat* top = pileEtat.top();
+        pileEtat.pop();
+        delete top;
+    }
+}// Bloc vide
 //----- Fin destructeur
