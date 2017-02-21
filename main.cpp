@@ -90,5 +90,15 @@ int main()
 	int resultat = aut.Run();
 	cout <<"resultat: "<< resultat<< endl;
 
+	// lexer.~Lexer();
+
+	// for(list<Symbole *>::iterator it = symboles.begin(); it != symboles.end(); it++)
+	// {
+	// 	if(*it != NULL)
+	// 	{
+	// 		cout << "PROBLEME : " << *it << endl;
+	// 	}
+	// }
+
 	return 0;
 }

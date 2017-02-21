@@ -69,6 +69,7 @@ Lexer::Lexer(list<Symbole *> symboles) : listeDeSymbole(symboles)
 //----- Destructeur
 Lexer::~Lexer()
 {
+    cout << "Appel du destructeur" << endl;
     for(list<Symbole *>::iterator it = listeDeSymbole.begin(); it != listeDeSymbole.end(); it++)
     {
         delete(*it);
