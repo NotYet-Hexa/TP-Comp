@@ -43,7 +43,7 @@ class Etat {
 
         void print() const;
 
-        virtual bool Transition(Automate* const automate, Symbole * s) = 0;
+        virtual void Transition(Automate* const automate, Symbole * s) = 0;
 
 };
 

@@ -18,6 +18,7 @@ using namespace std;
 //------------------------------------------------------ Include personnel
 #include "E3.h"
 #include "../Expression.h"
+#include "../Constante.h"
 
 //---------------------------------------------------- Variables de classe
 
@@ -28,23 +29,29 @@ using namespace std;
 //-------------------------------------------------------- Fonctions amies
 
 //----------------------------------------------------- Méthodes publiques
-bool E3::Transition(Automate* const automate, Symbole * s)
+void E3::Transition(Automate* const automate, Symbole * s)
 {
     this->print();
     s->print();
     cout<<endl;
-    automate->Reduction(1);
-    // switch((int)(*s))
-    // {
-    //     case PLUS : 
-    //     case FOIS : 
-    //     case POUV :
-    //     case DOLL :
-    //         automate->Accepter();
-    //         break;
-    //     default : 
-    //         cout << "problem";
-    // }
+    
+    switch((int)(*s))
+    {
+        case PLUS :
+            automate->Reduction(1);
+            break;
+        case FOIS :
+            automate->Reduction(1);
+            break; 
+        case PFER :
+            automate->Reduction(1);
+            break;
+        case DOLL :
+            automate->Reduction(1);
+            break;
+        default : 
+            cout << "problem";
+    }
 }
 
 //----- Constructeur

@@ -47,6 +47,7 @@ void Lexer::Insert(Symbole* s)
 {
     // delete *teteDeLecture;
     teteDeLecture--;
+    // Symbole * tmp
     *teteDeLecture = s;
     // cout<<"En tete de lecture après insert : ";
     // (*(this->teteDeLecture))->print();

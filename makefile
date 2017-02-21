@@ -32,5 +32,5 @@ $(EXEC): $(OBJ) $(SRC)
 	$(CC) -c $(CFLAGS) $< 	
 
 clean:
-	rm -rf *.o $(EXEC)
+	rm -rf *.o $(EXEC) Etats/*.o
 

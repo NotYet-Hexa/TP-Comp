@@ -18,6 +18,7 @@ using namespace std;
 //------------------------------------------------------ Include personnel
 #include "E4.h"
 #include "E3.h"
+#include "E7.h"
 #include "../Constante.h"
 #include "../Expression.h"
 
@@ -31,7 +32,7 @@ using namespace std;
 
 //----------------------------------------------------- Méthodes publiques
 
-bool E4::Transition(Automate* const automate, Symbole * s)
+void E4::Transition(Automate* const automate, Symbole * s)
 {
     this->print();
     s->print();
@@ -43,7 +44,7 @@ bool E4::Transition(Automate* const automate, Symbole * s)
                 Expression * ex = (Expression*)(s);
                 if(ex->evalue)
                 {
-                    //automate->Decalage(s, new E7());
+                    automate->Decalage(s, new E7());
                 }
                 else
                 {

@@ -31,7 +31,7 @@ class E4: public Etat{
     public:
         E4();
         ~E4();
-        virtual bool Transition(Automate* const automate, Symbole * s);
+        virtual void Transition(Automate* const automate, Symbole * s);
 
        
 

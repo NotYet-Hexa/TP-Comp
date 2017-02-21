@@ -35,7 +35,7 @@ using namespace std;
 
 //----------------------------------------------------- Méthodes publiques
 
-bool E0::Transition(Automate* const automate, Symbole * s)
+void E0::Transition(Automate* const automate, Symbole * s)
 {
     this->print();
     s->print();

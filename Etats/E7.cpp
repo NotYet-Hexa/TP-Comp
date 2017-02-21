@@ -17,6 +17,8 @@ using namespace std;
 
 //------------------------------------------------------ Include personnel
 #include "E7.h"
+#include "../Constante.h"
+#include "../Expression.h"
 
 //---------------------------------------------------- Variables de classe
 
@@ -28,8 +30,34 @@ using namespace std;
 
 //----------------------------------------------------- Méthodes publiques
 
+void E7::Transition(Automate* const automate, Symbole * s)
+{
+    this->print();
+    s->print();
+    cout<<endl;
+    switch((int)(*s))
+    {
+        case PLUS :
+            automate->Reduction(3); 
+            break;
+        case FOIS :
+                //decalage 
+            break;
+        case PFER : 
+            automate->Reduction(3);
+            break;
+        case DOLL :
+            automate->Reduction(3);    
+            break;
+        default : 
+            cout << "problème" << endl;
+            exit(0);
+    }
+}
+
+
 //----- Constructeur
-E7::E7()
+E7::E7() : Etat("E7")
 {}// Bloc vide
 //----- Fin constructeur
 

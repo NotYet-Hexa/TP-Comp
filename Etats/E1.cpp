@@ -30,7 +30,7 @@ using namespace std;
 //-------------------------------------------------------- Fonctions amies
 
 //----------------------------------------------------- Méthodes publiques
-bool E1::Transition(Automate* const automate, Symbole * s)
+void E1::Transition(Automate* const automate, Symbole * s)
 {
     this->print();
     s->print();

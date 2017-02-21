@@ -13,6 +13,10 @@ copyright            : (C)2015 par FOLLEAS Jacques et SCHROTER Quentin
 
 //--------------------------------------------------- Interfaces utilisées
 
+#include "../Etat.h"
+#include "../Automate.h"
+#include "../Symbole.h"
+
 //------------------------------------------------------------------------
 
 //------------------------------------------------------------- Constantes
@@ -23,12 +27,14 @@ copyright            : (C)2015 par FOLLEAS Jacques et SCHROTER Quentin
 
 //------------------------------------------------------------------------
 
-class E7{
+class E7: public Etat{
     public:
         E7();
-
-    private:
         ~E7();
+        virtual void Transition(Automate* const automate, Symbole * s);
+
+       
+
 
 };
 

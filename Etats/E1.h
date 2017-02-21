@@ -29,7 +29,7 @@ class E1 : public Etat{
     public:
         E1();
         ~E1();
-        virtual bool Transition(Automate* const automate, Symbole * s);
+        virtual void Transition(Automate* const automate, Symbole * s);
 
     private:
         
