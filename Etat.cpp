@@ -32,15 +32,13 @@ using namespace std;
 //----- Nouvelle méthode
 void Etat::print() const
 {
-    cout<<name<<"\n";
+    cout<<name;
 } 
 //-----Fin méthode
 
 //----- Constructeur
-Etat::Etat(string name)
-{
-    this->name = name;
-}
+Etat::Etat(string theName): name(theName)
+{}// Bloc vide
 //----- Fin constructeur
 
 //----- Destructeur

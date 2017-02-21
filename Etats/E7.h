@@ -29,11 +29,11 @@ copyright            : (C)2015 par FOLLEAS Jacques et SCHROTER Quentin
 
 class E7 : public Etat{
     public:
-        E7();
-        ~E7();
+        
         virtual void Transition(Automate* const automate, Symbole * s);
 
-
+        E7();
+        ~E7();
 };
 
 #endif // if ! defined E7_H

@@ -27,9 +27,11 @@ copyright            : (C)2015 par FOLLEAS Jacques et SCHROTER Quentin
 
 class E0 : public Etat{
     public:
+
+        virtual void Transition(Automate* const automate, Symbole * s);
+
         E0();
         ~E0();
-        virtual void Transition(Automate* const automate, Symbole * s);
         
 };
 

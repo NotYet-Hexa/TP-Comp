@@ -29,11 +29,11 @@ copyright            : (C)2015 par FOLLEAS Jacques et SCHROTER Quentin
 
 class E4 : public Etat{
     public:
+        
+        virtual void Transition(Automate* const automate, Symbole * s);
+
         E4();
         ~E4();
-        virtual void Transition(Automate* const automate, Symbole * s);
-   
-
 };
 
 #endif // if ! defined E4_H

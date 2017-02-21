@@ -21,6 +21,7 @@ const int INT_FOIS = (int)('*');
 const int INT_POUV = (int)('(');
 const int INT_PFER = (int)(')');
 
+// message affiché en cas d'erreur de syntaxe
 const char PROBLEME[] = "Erreur de syntaxe";
 
 #endif // if ! defined CONSTANT_H
