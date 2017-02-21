@@ -128,7 +128,7 @@ void Automate::Reduction(int n)
     }
     else
     {
-        cout << "problem" << endl;
+        cout << PROBLEME << endl;
     }
     // on met dans le pointeur du lexer l'expression qu'on vient de calculer
     // de telle sorte que le prochain symbole lu sera l'expression que l'on vient de calculer

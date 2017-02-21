@@ -31,7 +31,6 @@ class E3 : public Etat{
         ~E3();
         virtual void Transition(Automate* const automate, Symbole * s);
 
-    private:
        
 };
 

@@ -16,9 +16,11 @@ copyright            : (C)2015 par FOLLEAS Jacques et SCHROTER Quentin
 using namespace std;
 
 //------------------------------------------------------ Include personnel
-#include "E7.h"
 #include "../Constante.h"
 #include "../Expression.h"
+
+#include "E5.h"
+#include "E7.h"
 
 //---------------------------------------------------- Variables de classe
 
@@ -41,7 +43,7 @@ void E7::Transition(Automate* const automate, Symbole * s)
             automate->Reduction(3); 
             break;
         case FOIS :
-                //decalage 
+            automate->Decalage(s, new E5());
             break;
         case PFER : 
             automate->Reduction(3);
@@ -50,7 +52,7 @@ void E7::Transition(Automate* const automate, Symbole * s)
             automate->Reduction(3);    
             break;
         default : 
-            cout << "problème" << endl;
+            cout << PROBLEME << endl;
             exit(0);
     }
 }

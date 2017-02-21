@@ -16,10 +16,13 @@ copyright            : (C)2015 par FOLLEAS Jacques et SCHROTER Quentin
 using namespace std;
 
 //------------------------------------------------------ Include personnel
-#include "E1.h"
-#include "E4.h"
 #include "../Constante.h"
 #include "../Expression.h"
+
+#include "E1.h"
+#include "E4.h"
+#include "E5.h"
+
 
 //---------------------------------------------------- Variables de classe
 
@@ -41,14 +44,13 @@ void E1::Transition(Automate* const automate, Symbole * s)
             automate->Decalage(s, new E4());
             break;
         case FOIS : 
-            // automate->Decalage(s, new E5());
+            automate->Decalage(s, new E5());
             break;
         case DOLL :
             automate->Accepter();
             break;
         default : 
-            cout << "problème" << endl;
-            // cout << (int)(*s);
+            cout << PROBLEME << endl;
             exit(0);
     }
 }

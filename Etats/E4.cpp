@@ -16,11 +16,14 @@ copyright            : (C)2015 par FOLLEAS Jacques et SCHROTER Quentin
 using namespace std;
 
 //------------------------------------------------------ Include personnel
-#include "E4.h"
-#include "E3.h"
-#include "E7.h"
 #include "../Constante.h"
 #include "../Expression.h"
+
+#include "E2.h"
+#include "E3.h"
+#include "E4.h"
+#include "E7.h"
+
 
 //---------------------------------------------------- Variables de classe
 
@@ -53,11 +56,10 @@ void E4::Transition(Automate* const automate, Symbole * s)
             }
             break;
         case POUV : 
-            // automate->Decalage(s, new E2());
+            automate->Decalage(s, new E2());
             break;
         default : 
-            cout << "problème" << endl;
-            // cout << (int)(*s);
+            cout << PROBLEME << endl;
             exit(0);
     }
 }
