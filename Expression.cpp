@@ -31,6 +31,7 @@ using namespace std;
 
 void Expression::print()
 {
+    cout<<"EXP :";
     cout << valeur;
 }
 

@@ -39,6 +39,7 @@ void Symbole::print()
         case FOIS  : cout << "FOIS";   break;
         case POUV  : cout << "POUV";   break;
         case PFER  : cout << "PFER";   break;
+        case DOLL  : cout << "DOLL";   break;
         default    : cout << "NULL";
     }
 }

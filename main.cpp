@@ -31,7 +31,7 @@ int main()
 		//Condition de sortie en cas de fin de chain de caractère
 		if(c==EOF || c == (int)('\n') || c == (int)('\r'))
 		{
-			// l'Expression n'est formé que de caractère reconue 
+			// l'Expression n'est formé que de caractère reconue
 			symboles.push_back(new Symbole(DOLL));
 			break;
 		}
@@ -52,6 +52,7 @@ int main()
 					break;
 				}
 			}
+			
 			symboles.push_back(new Expression(stoi(str)));
 
 		}
@@ -71,15 +72,16 @@ int main()
 		}		
 	}
 
-#if DEBUG
+// #if DEBUG
+
 
 	for(list<Symbole *>::iterator it = symboles.begin(); it != symboles.end(); it++)
 	{
 		(*it)->print();
 		cout << endl;
 	}
-
-#endif 
+	cout<<"fin de lecture création du lexer"<<endl;
+// #endif 
 
 
 	Lexer lexer(symboles);

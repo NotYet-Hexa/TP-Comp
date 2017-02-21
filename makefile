@@ -11,7 +11,7 @@ OBJ= $(SRCCPP:.cpp=.o)
 all: $(EXEC)
 
 $(EXEC): $(OBJ)
-	$(CC) -o $@ $^ $(LDFLAGS)
+	$(CC) -o $@ $^ $(LDFLAGS) -D DEBUG
 
 %.o: SRC
 	$(CC) -o $@ -c $< $(CFLAGS)

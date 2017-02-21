@@ -63,6 +63,7 @@ int Automate::Run()
     {
         Etat* courant = pileEtat.top();
         Symbole* symboleSuivant = lexer->Lecture();
+        cout<<"Symbole lu :"<<((Expression)(*symboleSuivant)).GetValeur()<<" : "<<((Expression)(*symboleSuivant)).evalue<<endl;
         courant->Transition(this, symboleSuivant);
     }
     return ((Expression *)(pileSymbole.top()))->GetValeur();
