@@ -17,17 +17,18 @@ all: $(EXEC)
 $(EXEC): $(OBJ)
 	$(CC) $^ -o $@ $(LDFLAGS)
 
+# file in current folder
 %.o: %.cpp %.h
 	$(CC) -c $(CFLAGS) $< 
 
+# file in Etats folder
 %.o: Etats/%.cpp Etats/%.h
 	$(CC) -c $(CFLAGS) $< 
 
+# main
 %.o: %.cpp
 	$(CC) -c $(CFLAGS) $< 	
 
 clean:
-	rm -rf *.o exe
+	rm -rf *.o $(EXEC)
 
-mrproper: clean
-	rm -rf $(EXEC)
