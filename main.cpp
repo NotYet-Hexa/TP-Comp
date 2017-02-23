@@ -76,8 +76,14 @@ int main()
 	// On lance le lexer et on récupère l'expression évalué
 	int resultat = autom.Run();
 
-	cout << "Resultat : "<< resultat << endl;
+#ifdef DEBUG
 
+	cout << "Resultat : ";
+
+#endif
+
+	cout << resultat << endl;
+	
 	symboles.clear();
 	return 0;
 }
