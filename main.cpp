@@ -59,7 +59,7 @@ int main()
 				case INT_POUV : id = POUV; break;
 				case INT_PFER : id = PFER; break;
 				default : 
-					cout << "caractère non reconnu" << c << endl;
+					cout << "caractère non reconnu : " << (char)c << endl;
 					return 0; 
 			}
 			symboles.push_back(new Symbole(id));

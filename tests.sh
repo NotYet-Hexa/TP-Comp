@@ -4,7 +4,7 @@ run_test() {
     expression=`sed '1!d' $1`
     resulthope=`sed '2!d' $1 | tr -d '\r' | tr -d '\n'`
 
-    if [ -z $resulthope ]
+    if [ -z "$resulthope" ]
     then
         echo "Missing new line in $1"
         exit 1
@@ -18,7 +18,7 @@ run_test() {
     then
         echo "`basename $1` OK"
     else
-        echo "$1 fail"
+        echo -e "$1 fail \n\t→ expected : '$resulthope' - actual : '$result'"
         exit 1
     fi
 }
