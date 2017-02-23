@@ -29,12 +29,12 @@ using namespace std;
 
 //----------------------------------------------------- Méthodes publiques
 
-//----- Nouvelle méthode
+/// Affiche les informations de l'objet instancié de la classe Symbole
 void Symbole::print()
 {
      switch(this->ident)
     {
-        case EXPR  : cout << PROBLEME << endl;
+        case EXPR  : cout << "La fonction print de expression devrait être appelé" << endl;
         case PLUS  : cout << "PLUS";   break;
         case FOIS  : cout << "FOIS";   break;
         case POUV  : cout << "POUV";   break;
@@ -43,19 +43,16 @@ void Symbole::print()
         default    : cout << "NULL";
     }
 }
-//----- Fin méthode
 
-//----- Nouvelle méthode
+/// Cast en int d'un objet instancié de la classe Symbole retournant son identifiant
 Symbole::operator int () const
 {
     return ident;
 }
-//----- Fin méthode
 
 //----- Constructeur
 Symbole::Symbole(int id) : ident(id)
-{
-}
+{} // Bloc vide
 //------ Fin constructeur
 
 //----- Destructeur

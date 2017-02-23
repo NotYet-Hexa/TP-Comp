@@ -1,8 +1,5 @@
 #include <iostream>
 #include <string>
-#include <cctype>
-#include <stdio.h>
-#include <fstream>
 #include <list>
 
 #include "Constante.h"
@@ -18,7 +15,6 @@ int main()
 	string str;
 	int c;
 
-	ifstream is;
 	list<Symbole *> symboles;
 
 	bool lastWasDigit = false;
@@ -63,7 +59,7 @@ int main()
 				case INT_POUV : id = POUV; break;
 				case INT_PFER : id = PFER; break;
 				default : 
-					cout << "caractère non recunu" << c <<endl;
+					cout << "caractère non reconnu" << c << endl;
 					return 0; 
 			}
 			symboles.push_back(new Symbole(id));
@@ -85,10 +81,10 @@ int main()
 	Lexer lexer(symboles);
 
 	// On initialise l'automate avec le lexer
-	Automate aut(lexer);
+	Automate autom(lexer);
 
 	// On lance le lexer et on récupère l'expression évalué
-	int resultat = aut.Run();
+	int resultat = autom.Run();
 
 	cout << "Resultat : "<< resultat << endl;
 

@@ -29,14 +29,16 @@ using namespace std;
 
 //----------------------------------------------------- Méthodes publiques
 
+/// Affiche les informations sur l'expression : sa valeur et si celle-ci est évalué
 void Expression::print()
 {
-    cout<<"EXP :";
+    cout << "EXP :";
     cout << valeur;
-    cout<<" : ";
-    cout<<evalue;
+    cout << " : ";
+    cout << evalue;
 }
 
+/// Retourne la valeur de l'expression
 int Expression::GetValeur()
 {
     return this->valeur;
@@ -45,7 +47,7 @@ int Expression::GetValeur()
 //----- Constructeur
 Expression::Expression(int val, bool eval):Symbole(EXPR), valeur(val), evalue(eval)
 {
-}// Bloc vide
+}
 //----- Fin constructeur
 
 Expression::Expression(const Expression& exp):Symbole(EXPR), valeur(exp.valeur), evalue(exp.evalue)
@@ -54,5 +56,5 @@ Expression::Expression(const Expression& exp):Symbole(EXPR), valeur(exp.valeur),
 }
 //----- Destructeur
 Expression::~Expression()
-{}// Bloc vide
+{}
 //----- Fin destructeur

@@ -23,10 +23,6 @@ Expression.h  -  description
 
 
 class Expression : public Symbole {
-    private: 
-
-        int valeur;
-        
 
     public:
 
@@ -37,6 +33,10 @@ class Expression : public Symbole {
         Expression(int val, bool eval = false);
         Expression(const Expression& exp);
         ~Expression();
+
+    private: 
+
+        int valeur;
 };
 //------------------------------------------------------------------------
 

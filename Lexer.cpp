@@ -27,6 +27,8 @@ using namespace std;
 //-------------------------------------------------------- Fonctions amies
 
 //----------------------------------------------------- Méthodes publiques
+
+/// Decale la tête de lecture de 1 vers la fin
 void Lexer::Decalage()
 {
     if(this->teteDeLecture != this->listeDeSymbole.end())
@@ -35,14 +37,20 @@ void Lexer::Decalage()
     }
 }
 
+/// Retourne le symbole pointé par la tête de lecture
 Symbole* Lexer::Lecture()
 {
-    // cout<<"lu dans lex : ";
-    // (*(this->teteDeLecture))->print();
-    // cout<<endl;
+
+#ifdef DEBUG
+    cout << "Symbole lu dans le lexer : ";
+    (*(this->teteDeLecture))->print();
+    cout << endl;
+#endif
+
     return *(this->teteDeLecture);
 }
 
+/// Insert le symbole dans le lexer de telle sorte que celui-ci soit le prochain lu
 void Lexer::Insert(Symbole* s)
 {
     teteDeLecture--;
@@ -51,18 +59,22 @@ void Lexer::Insert(Symbole* s)
     delete tmp;
 }
 
-
 //----- Constructeur
 Lexer::Lexer(list<Symbole *> symboles) : listeDeSymbole(symboles)
 {
-    // cout<<"construction de Lexer"<<endl;
     this->teteDeLecture = listeDeSymbole.begin();
-    // for(list<Symbole *>::iterator it = listeDeSymbole.begin(); it != listeDeSymbole.end(); it++)
-	// {
-	// 	(*it)->print();
-	// 	cout << endl;
-	// }
-    // cout<<"Lexer construit" <<endl;
+
+    
+#if DEBUG
+	cout << "------DEBUG-Contenue-du-lexer------" << endl;
+	for(list<Symbole *>::iterator it = symboles.begin(); it != symboles.end(); it++)
+	{
+		(*it)->print();
+		cout << endl;
+	}
+	cout << "-----------------------------------" << endl;
+#endif
+
 }
 //----- Fin constructeur
 
@@ -74,5 +86,5 @@ Lexer::~Lexer()
         delete *it;
     }
     listeDeSymbole.clear();
-}// Bloc vide
+}
 //----- Fin destructeur

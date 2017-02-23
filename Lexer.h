@@ -21,15 +21,17 @@ copyright            : (C)2015 par FOLLEAS Jacques et SCHROTER Quentin
 
 //------------------------------------------------------------------------
 // Role de la classe Lexer:
-//
+// Permet de naviguer dans l'expression aisément
 
 //------------------------------------------------------------------------
 
 class Lexer{
     public:
         void Decalage();
-        void Insert(Symbole* s);
         Symbole* Lecture();
+
+        void Insert(Symbole* s);
+
         Lexer(std::list<Symbole *> symboles);
         ~Lexer();
 
