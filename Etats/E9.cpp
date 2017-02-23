@@ -34,9 +34,9 @@ void E9::Transition(Automate* const automate, Symbole * s)
 {
      #if DEBUG
     this->print();
-    cout<<endl;
+    cout << endl;
     s->print();
-    cout<<endl;
+    cout << endl;
     #endif
     
     switch((int)(*s))

@@ -66,6 +66,12 @@ int main()
 		}		
 	}
 
+	if(symboles.size() <= 1)
+	{
+		cout << "Aucune expression à évaluer" << endl;
+		return 0;
+	}
+
 
 	// On initialise le lexer avec nos symboles
 	Lexer lexer(symboles);
@@ -83,7 +89,7 @@ int main()
 #endif
 
 	cout << resultat << endl;
-	
+
 	symboles.clear();
 	return 0;
 }

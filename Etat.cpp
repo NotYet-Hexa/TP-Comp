@@ -32,7 +32,7 @@ using namespace std;
 
 void Etat::print() const
 {
-    cout<<name;
+    cout << name;
 } 
 
 //----- Constructeur
