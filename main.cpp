@@ -89,6 +89,5 @@ int main()
 	cout << "Resultat : "<< resultat << endl;
 
 	symboles.clear();
-
 	return 0;
 }

@@ -33,23 +33,29 @@ class Etat;
 class Automate{
     
     public:
+         
         void EmpilerSymbole(Symbole* s);
+
         Symbole* DepilerSymbole();
 
         void EmpilerEtat(Etat* e);
         Etat* DepilerEtat();
 
         void Accepter();
+        
         void Decalage(Symbole* s, Etat* e);
         void Reduction(int n);
 
+        // retourne l'entier calculé
         int Run();
 
         Automate(Lexer& l);
         ~Automate();
 
     private:
+        
         Lexer* lexer;
+        
         std::stack<Symbole*> pileSymbole;
         std::stack<Etat*> pileEtat;
 

@@ -27,11 +27,11 @@ copyright            : (C)2015 par FOLLEAS Jacques et SCHROTER Quentin
 
 class E5 : public Etat{
     public:
-        E5();
-        ~E5();
+       
         virtual void Transition(Automate* const automate, Symbole * s);
-   
 
+         E5();
+        ~E5();
 };
 
 #endif // if ! defined E5_H

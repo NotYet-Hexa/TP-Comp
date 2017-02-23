@@ -34,9 +34,13 @@ using namespace std;
 //----------------------------------------------------- Méthodes publiques
 void E2::Transition(Automate* const automate, Symbole * s)
 {
+    #if DEBUG
     this->print();
+    cout<<endl;
     s->print();
     cout<<endl;
+    #endif
+    
     switch((int)(*s))
     {
         case EXPR : 

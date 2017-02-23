@@ -27,11 +27,11 @@ copyright            : (C)2015 par FOLLEAS Jacques et SCHROTER Quentin
 
 class E1 : public Etat{
     public:
+
         E1();
         ~E1();
-        virtual void Transition(Automate* const automate, Symbole * s);
 
-        
+        virtual void Transition(Automate* const automate, Symbole * s);       
 };
 
 #endif // if ! defined E1_H

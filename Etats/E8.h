@@ -27,11 +27,11 @@ copyright            : (C)2015 par FOLLEAS Jacques et SCHROTER Quentin
 
 class E8 : public Etat{
     public:
-        E8();
-        ~E8();
+        
         virtual void Transition(Automate* const automate, Symbole * s);
         
-
+        E8();
+        ~E8();
 };
 
 #endif // if ! defined E8_H

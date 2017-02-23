@@ -37,14 +37,11 @@ class Etat {
 
     public:
 
-        Etat(std::string name);
-        
-        virtual ~Etat();
-
         void print() const;
-
         virtual void Transition(Automate* const automate, Symbole * s) = 0;
 
+        Etat(std::string name);
+        virtual ~Etat();
 };
 
 #endif // if ! defined ETAT_H

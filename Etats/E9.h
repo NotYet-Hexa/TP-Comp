@@ -27,11 +27,11 @@ copyright            : (C)2015 par FOLLEAS Jacques et SCHROTER Quentin
 
 class E9 : public Etat{
     public:
-        E9();
-        ~E9();
+        
         virtual void Transition(Automate* const automate, Symbole * s);
         
-
+        E9();
+        ~E9();
 };
 
 #endif // if ! defined E9_H

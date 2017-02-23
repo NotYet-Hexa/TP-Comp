@@ -27,11 +27,11 @@ copyright            : (C)2015 par FOLLEAS Jacques et SCHROTER Quentin
 
 class E3 : public Etat{
     public:
-        E3();
-        ~E3();
+        
         virtual void Transition(Automate* const automate, Symbole * s);
 
-       
+        E3();
+        ~E3();    
 };
 
 #endif // if ! defined E3_H
