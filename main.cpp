@@ -67,16 +67,6 @@ int main()
 	}
 
 
-#if DEBUG
-	cout << "------DEBUG-Contenue-du-lexer------" << endl;
-	for(list<Symbole *>::iterator it = symboles.begin(); it != symboles.end(); it++)
-	{
-		(*it)->print();
-		cout << endl;
-	}
-	cout << "-----------------------------------" << endl;
-#endif 
-
 	// On initialise le lexer avec nos symboles
 	Lexer lexer(symboles);
 
