@@ -33,14 +33,13 @@ using namespace std;
 
 //----------------------------------------------------- Méthodes publiques
 
-//----- Nouvelle méthode
+/// Empile le symbole dans la pile de symbole
 void Automate::EmpilerSymbole(Symbole* s)
 {
     pileSymbole.push(s);
 }
-//----- Fin de EmpilerSymbole
 
-//----- Nouvelle méthode
+/// Depile le symbole au sommet de la pile et le retourne
 Symbole* Automate::DepilerSymbole()
 {
     Symbole* tmp = pileSymbole.top();
@@ -48,16 +47,15 @@ Symbole* Automate::DepilerSymbole()
     //On retourne le symbole dépilé
     return tmp;
 }
-//----- Fin de DepilerSymbole
 
-//----- Nouvelle méthode
+/// Empile l'Etat passé en paramètre au sommet de la pile
 void Automate::EmpilerEtat(Etat* e)
 {
     pileEtat.push(e);
 }
-//----- Fin de EmpilerEtat
 
-//----- Nouvelle méthode
+
+/// Dépile l'Etat passé en paramètre et le retourne
 Etat* Automate::DepilerEtat()
 {
     Etat* tmp = pileEtat.top();
@@ -65,9 +63,8 @@ Etat* Automate::DepilerEtat()
     //On retourne l'état dépilé
     return tmp;
 }
-//----- Fin de DepilerEtat
 
-//----- Nouvelle méthode
+/// Lance l'automate puis retourne la valeur de l'expression passé au constructeur
 int Automate::Run()
 {
     // Tant que l'expression n'a pas été accepter par l'analyseur on 
@@ -86,17 +83,14 @@ int Automate::Run()
     // Si le mot est accepté on retourne la valeur de l'expression calulée
     return ((Expression *)(pileSymbole.top()))->GetValeur();
 }
-//----- Fin de Run
 
-//----- Nouvelle méthode
+/// Permet de stoper l'automate
 void Automate::Accepter()
 {
     accepter = true;
 }
 
-//----- Fin de Accepter
-
-//----- Nouvelle méthode
+/// Empile le symbole au sommet de la pile de symbole et fait de même avec l'état puis décale le lexer
 void Automate::Decalage(Symbole* s, Etat* e)
 {
     // On place le symbole qui vient d'être lu sur la pile de symbole  
@@ -106,9 +100,9 @@ void Automate::Decalage(Symbole* s, Etat* e)
     // Et on décale la tête de lecture 
     lexer->Decalage();
 }
-//----- Fin de Decalage
 
-//----- Nouvelle méthode
+
+/// On réduit en fonction du paramètre passé et des différents symboles lu
 void Automate::Reduction(int n)
 {
     Expression* ex;
@@ -177,7 +171,7 @@ void Automate::Reduction(int n)
     // l'expression que l'on vient de créer pour faire la bonne transition
     lexer->Insert((Symbole*)ex);
 }
-//----- Fin de Reduction
+
 
 //----- Constructeur
 Automate::Automate(Lexer& l): accepter(false)

@@ -29,12 +29,11 @@ using namespace std;
 //----------------------------------------------------- Méthodes publiques
 
 
-//----- Nouvelle méthode
+
 void Etat::print() const
 {
     cout<<name;
 } 
-//-----Fin méthode
 
 //----- Constructeur
 Etat::Etat(string theName): name(theName)
