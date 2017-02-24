@@ -54,8 +54,7 @@ void E1::Transition(Automate* const automate, Symbole * s)
             automate->Accepter();
             break;
         default : 
-            cout << PROBLEME << endl;
-            exit(0);
+            throw PROBLEME;
     }
 }
 

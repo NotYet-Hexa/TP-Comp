@@ -54,8 +54,7 @@ void E6::Transition(Automate* const automate, Symbole * s)
             automate->Decalage(s, new E9());
             break;
         default : 
-            cout << PROBLEME << endl;
-            exit(0);
+            throw PROBLEME;
     }
 }
 //----- Constructeur

@@ -48,8 +48,7 @@ void E3::Transition(Automate* const automate, Symbole * s)
             automate->Reduction(1);
             break;
         default : 
-            cout << PROBLEME << endl;
-            exit(0);
+            throw PROBLEME;
     }
 }
 

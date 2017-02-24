@@ -165,7 +165,7 @@ void Automate::Reduction(int n)
     else
     {
         // Sinon la reduction ne corespond à aucune règle connue
-        cout << PROBLEME << endl;
+        throw PROBLEME;
     }
     // Enfin on fqit en sort que lq prochaine lecture pqr l'état courant soit 
     // l'expression que l'on vient de créer pour faire la bonne transition

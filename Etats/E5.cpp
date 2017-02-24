@@ -61,8 +61,7 @@ void E5::Transition(Automate* const automate, Symbole * s)
             automate->Decalage(s, new E2());
             break;
         default : 
-            cout << PROBLEME << endl;
-            exit(0);
+            throw PROBLEME;
     }
 }
 

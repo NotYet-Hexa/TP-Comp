@@ -14,6 +14,7 @@ int main()
 {
 	string str;
 	int c;
+	int resultat;
 
 	list<Symbole *> symboles;
 
@@ -60,6 +61,7 @@ int main()
 				case INT_PFER : id = PFER; break;
 				default : 
 					cout << "caractère non reconnu : " << (char)c << endl;
+					symboles.clear();
 					return 0; 
 			}
 			symboles.push_back(new Symbole(id));
@@ -80,7 +82,17 @@ int main()
 	Automate autom(lexer);
 
 	// On lance le lexer et on récupère l'expression évalué
-	int resultat = autom.Run();
+
+	try
+	{
+		resultat = autom.Run();
+	}
+	catch (const char err[])
+	{
+		cout << err << endl;
+		symboles.clear();
+		return -1;
+	}
 
 #ifdef DEBUG
 
