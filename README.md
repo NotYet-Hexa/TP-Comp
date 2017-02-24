@@ -19,10 +19,24 @@ aux différentes méthodes et aux différents états dans lequel l'automate est 
 $ make debug
 ```
 
-## Tests unitaires
+## Utilisation
 
-Le dossier **Tests** contient les différents tests unitaires, chaque fichier ayant un nom de la forme
-test(.*) est appelé, chaque fichier doit être formé d'au moins 3 lignes :
+Pour évaluer une expression provenant d'un fichier : (Cela n'évaluera que la première ligne du fichier)
+
+```{r, engine='bash', count_lines}
+$ cat mon_fichier.txt | ./exe
+```
+
+Pour évaluer une chaîne de caractère, lancer l'executable, taper votre chaine de caractère puis appuyer sur la touche *Entrée* ou :
+
+```{r, engine='bash', count_lines}
+$ echo "mon expression" | ./exe
+```
+
+## Tests de non regression
+
+Le dossier **Tests** contient les différents tests de non regression, chaque fichier ayant un nom de la forme
+*test\** est appelé, chaque fichier doit être formé d'au moins 3 lignes :
 
 - 1ère ligne : expression à évalué
 - 2ème ligne : résultat de l'expression
