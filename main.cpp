@@ -61,7 +61,7 @@ int main()
 				case INT_PFER : id = PFER; break;
 				default : 
 					cout << "caractère non reconnu : " << (char)c << endl;
-					for(list<Symbole*>::iterator it = symboles.begin(); it != symboles.end(): it++)
+					for(list<Symbole*>::iterator it = symboles.begin(); it != symboles.end(); it++)
 					{
 						delete *it;
 					}
